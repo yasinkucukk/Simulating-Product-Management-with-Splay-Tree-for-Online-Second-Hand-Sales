@@ -230,6 +230,8 @@ int main()
         fprintf(fpw, "Cannot open the file %s", fileNameViewed);
         return 1;
     }
+    printf("- - - - - - - - - - -\n\n");
+    fprintf(fp, "- - - - - - - - - - -\n\n");
     printf("Input file for viewed products: %s\n\n", fileNameViewed);
     fprintf(fpw, "Input file for viewed products: %s\n\n", fileNameViewed);
 
