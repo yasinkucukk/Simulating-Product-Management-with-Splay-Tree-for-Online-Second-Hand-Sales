@@ -193,10 +193,19 @@ void preorder(struct nodeSplay *root, FILE *fpw)
 int main()
 {
     // get file name
-    char fileNameLabels[20] = "labels.txt";
-
-    FILE *fp = fopen(fileNameLabels, "r");
+    char fileNameLabels[20];
     FILE *fpw = fopen("output.txt", "w");
+    
+ 	printf("Input file for label numbers: ");
+    fprintf(fpw, "Input file for label numbers: ");
+    
+    scanf("%s", fileNameLabels);
+    printf("\n\n");
+
+    fprintf(fpw,"%s\n\n", fileNameLabels);
+ 
+    FILE *fp = fopen(fileNameLabels, "r");
+    
 
     if (fp == NULL)
     {
@@ -205,8 +214,6 @@ int main()
         return 1;
     }
 
-    printf("Input file for label numbers: %s\n\n", fileNameLabels);
-    fprintf(fpw, "Input file for label numbers: %s\n\n", fileNameLabels);
 
     // read the the file
     int intRead;
@@ -222,18 +229,26 @@ int main()
     fclose(fp);
 
     // get file name
-    char fileNameViewed[20] = "viewed.txt";
+    char fileNameViewed[20];
+    
+    printf("- - - - - - - - - - -\n\n");
+    fprintf(fpw, "- - - - - - - - - - -\n\n");
+    printf("Input file for viewed products: ");
+    fprintf(fpw, "Input file for viewed products: ");
+    
+    scanf("%s", fileNameViewed);
+    printf("\n\n");
+    fprintf(fpw, "%s\n\n", fileNameViewed);
+    
     FILE *fpr = fopen(fileNameViewed, "r");
+    
     if (fpr == NULL)
     {
         printf("Cannot open the file %s", fileNameViewed);
         fprintf(fpw, "Cannot open the file %s", fileNameViewed);
         return 1;
     }
-    printf("- - - - - - - - - - -\n\n");
-    fprintf(fp, "- - - - - - - - - - -\n\n");
-    printf("Input file for viewed products: %s\n\n", fileNameViewed);
-    fprintf(fpw, "Input file for viewed products: %s\n\n", fileNameViewed);
+    
 
     // read the the file
     // search
